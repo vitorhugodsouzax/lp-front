@@ -1,0 +1,4 @@
+# Nunca versionar planilhas de leads
+*.xlsx
+*.xls
+*.csv

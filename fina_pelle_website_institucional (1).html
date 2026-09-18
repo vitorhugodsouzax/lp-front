@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fina Pelle | Centro de Estética e Depilação a Laser em Palhoça - SC</title>
+    <meta name="description" content="Clínica de estética avançada e depilação a laser em Palhoça - SC. Mais de 12 anos de história resgatando sua autoestima com tratamentos faciais, corporais e capilares.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf6f7',
+                            100: '#f8e6e9',
+                            200: '#f1ccd3',
+                            300: '#e4a4b1',
+                            400: '#d4798e',
+                            500: '#c1526d',
+                            600: '#a83d57',
+                            700: '#8a2e44',
+                            800: '#712739',
+                            900: '#481622',
+                        },
+                        roseGold: {
+                            light: '#f9e8e6',
+                            DEFAULT: '#d8a0a6',
+                            dark: '#b37780'
+                        },
+                        gold: {
+                            light: '#f7e7ce',
+                            DEFAULT: '#c5a059',
+                            dark: '#9d7c3b'
+                        },
+                        stoneDark: '#1c1316'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdf8f9;
+            color: #2b2326;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#d4798e 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+            opacity: 0.18;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(228, 164, 177, 0.35);
+        }
+    </style>
+</head>
+<body class="antialiased text-stone-800 bg-[#fdf8f9]">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-900 text-brand-100 text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide">
+        <span class="inline-flex items-center gap-2">
+            <i class="fa-solid fa-star text-gold text-xs"></i>
+            <strong>Clínica Nota 5.0 no Google</strong> com mais de 270 avaliações de clientes satisfeitos!
+            <a href="#contato" class="underline hover:text-white ml-1 transition">Agende sua avaliação</a>
+        </span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-100 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="img/logo-fina-pelle.jpg" alt="Logo Fina Pelle" width="48" height="48" class="w-12 h-12 rounded-full bg-white border border-gold/40 object-cover group-hover:border-brand-500 transition-colors duration-300">
+                    <div>
+                        <span class="block font-serif text-2xl sm:text-3xl font-bold text-stone-900 leading-none tracking-tight">
+                            FINA PELLE
+                        </span>
+                        <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-600 font-semibold mt-0.5">
+                            Estética & Depilação a Laser
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu Links -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
+                    <a href="#inicio" class="hover:text-brand-600 transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-brand-600 transition-colors">Sobre</a>
+                    <a href="#servicos" class="hover:text-brand-600 transition-colors">Serviços</a>
+                    <a href="#diferenciais" class="hover:text-brand-600 transition-colors">Diferenciais</a>
+                    <a href="#depoimentos" class="hover:text-brand-600 transition-colors">Depoimentos</a>
+                    <a href="#localizacao" class="hover:text-brand-600 transition-colors">Localização</a>
+                    <a href="#faq" class="hover:text-brand-600 transition-colors">Dúvidas</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Fina%20Pelle." 
+                       target="_blank" 
+                       rel="noopener"
+                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-emerald-600/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Agendar Consulta</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Abrir menu" class="lg:hidden text-stone-700 hover:text-brand-600 p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-brand-100 px-6 pt-4 pb-6 space-y-4">
+            <a href="#inicio" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Início</a>
+            <a href="#sobre" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Sobre</a>
+            <a href="#servicos" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Serviços</a>
+            <a href="#diferenciais" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Diferenciais</a>
+            <a href="#depoimentos" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Depoimentos</a>
+            <a href="#localizacao" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Localização</a>
+            <a href="#faq" class="mobile-link block text-stone-700 font-medium hover:text-brand-600 py-1">Dúvidas</a>
+            <div class="pt-2 border-t border-stone-100">
+                <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Fina%20Pelle." 
+                   target="_blank" 
+                   rel="noopener"
+                   class="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white px-5 py-3 rounded-full text-sm font-semibold shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-brand-50 via-[#fdf8f9] to-[#fdf8f9]">
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Trust Badge -->
+                    <div class="inline-flex items-center gap-2 bg-white/90 border border-brand-200 px-4 py-1.5 rounded-full text-xs sm:text-sm text-stone-700 shadow-sm mx-auto lg:mx-0">
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="font-semibold text-stone-900">5.0</span>
+                        <span class="text-stone-400">•</span>
+                        <span>270+ Avaliações no Google em Palhoça</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-stone-900 leading-[1.15]">
+                        Resgate sua autoestima com <span class="italic font-normal text-brand-600 underline decoration-gold/50 underline-offset-8">elegância</span> e ciência estética.
+                    </h1>
+
+                    <!-- Subtext -->
+                    <p class="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Com mais de 12 anos de história em Palhoça - SC, criamos experiências personalizadas para valorizar sua beleza única. Especialistas em depilação a laser, tratamentos faciais e corporais.
+                    </p>
+
+                    <!-- Hero Call-to-Actions -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada%20na%20Fina%20Pelle." 
+                           target="_blank"
+                           rel="noopener"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-full font-semibold text-base shadow-lg shadow-brand-600/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Agendar Avaliação Gratuita</span>
+                        </a>
+
+                        <a href="#servicos" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 border border-stone-200 text-stone-800 px-8 py-4 rounded-full font-semibold text-base shadow-sm transition">
+                            <span>Ver Procedimentos</span>
+                            <i class="fa-solid fa-arrow-down text-sm text-brand-500"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlights Strip -->
+                    <div class="pt-6 border-t border-stone-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <span class="block font-serif text-2xl sm:text-3xl font-bold text-stone-900">12+</span>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider">Anos de Tradição</span>
+                        </div>
+                        <div class="border-x border-stone-200">
+                            <span class="block font-serif text-2xl sm:text-3xl font-bold text-stone-900">100%</span>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider">Atendimento VIP</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl sm:text-3xl font-bold text-stone-900">5.0 ★</span>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider">Nota no Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Visual Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Card Border Decorator -->
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-gold/40 via-brand-300 to-brand-500 blur-lg opacity-40"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-brand-100">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Tratamento estético facial na Clínica Fina Pelle" 
+                                 class="w-full h-[480px] object-cover"
+                                 onerror="this.src='https://placehold.co/600x800/f2e8e5/7a483d?text=Fina+Pelle+Estet%C3%ADca'">
+                            
+                            <!-- Floating Glass Info Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 glass-card p-5 rounded-2xl shadow-lg border border-white/60">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-brand-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                                        <i class="fa-solid fa-sparkles text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-serif font-bold text-stone-900 text-lg leading-tight">Avaliação Cosmetológica</p>
+                                        <p class="text-xs text-stone-600 mt-0.5">Procedimentos individualizados para a essência da sua beleza.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section / Sobre a Clínica -->
+    <section id="sobre" class="py-20 bg-white border-y border-brand-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- About Image Collage -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="relative">
+                        <div class="rounded-3xl overflow-hidden shadow-lg border border-brand-100">
+                            <img src="https://images.unsplash.com/photo-1512290900673-03099908a89f?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Ambiente acolhedor Fina Pelle" 
+                                 class="w-full h-[360px] object-cover"
+                                 onerror="this.src='https://placehold.co/800x600/e5d3cd/52342d?text=Fina+Pelle+Palho%C3%A7a'">
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -right-2 sm:right-6 bg-brand-900 text-white p-4 sm:p-5 rounded-2xl shadow-xl max-w-[220px]">
+                            <p class="text-xs uppercase tracking-wider text-gold font-semibold">Nossa Promessa</p>
+                            <p class="font-serif text-base sm:text-lg font-medium leading-snug mt-1">"Todo ser humano é individualmente belo."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Text Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.2em] text-brand-600 font-bold">Mais de 12 Anos de Tradição</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mt-2 leading-tight">
+                            Sobre a Clínica Fina Pelle em Palhoça
+                        </h2>
+                    </div>
+
+                    <div class="space-y-4 text-stone-600 leading-relaxed text-base">
+                        <p class="text-stone-800 font-medium text-lg leading-relaxed border-l-4 border-gold pl-4 py-1 italic bg-brand-50/50 rounded-r-lg">
+                            "Com mais de 12 anos de história, a Clínica Fina Pelle é uma empresa reconhecida pela qualidade dos serviços oferecidos e pela personalização dos atendimentos."
+                        </p>
+                        <p>
+                            A equipe Fina Pelle é formada por profissionais especializados e habilitados para avaliar, orientar e criar a experiência ideal para cada cliente. O nosso maior objetivo é valorizar o ser humano como único, oferecendo procedimentos que resgatam a autoestima, tornando as pessoas ainda mais belas.
+                        </p>
+                        <p>
+                            A beleza é a essência da vida, e acreditamos que o cuidado com a pele e o corpo deve unir aconchego, tecnologia avançada e total segurança biossegura.
+                        </p>
+                    </div>
+
+                    <!-- Values Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-50/60 border border-brand-100">
+                            <div class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center shrink-0 text-sm mt-0.5">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-sm">Atendimento VIP & Único</h4>
+                                <p class="text-xs text-stone-600 mt-0.5">Avaliamos suas necessidades individuais antes de qualquer aplicação.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-50/60 border border-brand-100">
+                            <div class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center shrink-0 text-sm mt-0.5">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-sm">Preço Justo & Acessível</h4>
+                                <p class="text-xs text-stone-600 mt-0.5">Propostas transparentes que se encaixam no seu orçamento.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp CTA Button -->
+                    <div class="pt-2">
+                        <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Li%20sobre%20a%20Fina%20Pelle%20no%20site%20e%20quero%20conhecer%20os%20procedimentos." 
+                           target="_blank" 
+                           rel="noopener"
+                           class="inline-flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-900 transition">
+                            <span>Conheça nossa estrutura e equipe via WhatsApp</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section / Procedimentos Estéticos -->
+    <section id="servicos" class="py-20 bg-[#fdf8f9]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-600 font-bold">Catálogo Completo de Tratamentos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900">
+                    Procedimentos Exclusivos & Personalizados
+                </h2>
+                <p class="text-stone-600 text-base">
+                    Tecnologia estética de ponta alinhada à cosmetologia avançada para entregar resultados visíveis, seguros e transformadores.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-10 mb-12" id="service-filters">
+                <button class="filter-btn active bg-brand-600 text-white px-5 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm transition-all" data-category="todos">
+                    Todos os Procedimentos
+                </button>
+                <button class="filter-btn bg-white hover:bg-brand-100 text-stone-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-stone-200 transition-all" data-category="laser">
+                    Depilação a Laser
+                </button>
+                <button class="filter-btn bg-white hover:bg-brand-100 text-stone-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-stone-200 transition-all" data-category="facial">
+                    Facial & Harmonização
+                </button>
+                <button class="filter-btn bg-white hover:bg-brand-100 text-stone-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-stone-200 transition-all" data-category="corporal">
+                    Corporal & Emagrecimento
+                </button>
+                <button class="filter-btn bg-white hover:bg-brand-100 text-stone-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border border-stone-200 transition-all" data-category="capilar">
+                    Terapia Capilar
+                </button>
+            </div>
+
+            <!-- Services Grid with ALL 15 Products -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+                
+                <!-- 1. Depilação Feminina -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="laser">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
+                             alt="Depilação Feminina a Laser" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Depila%C3%A7%C3%A3o+Feminina'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Depilação a Laser
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Depilação Feminina a Laser
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Eliminação definitiva e confortável dos pelos indesejados nas axilas, virilha, pernas, buço e corpo, com ponteira ultra resfriada.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Pele lisa & sem foliculite</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Depila%C3%A7%C3%A3o%20Feminina%20a%20Laser." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Depilação Masculina -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="laser">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80" 
+                             alt="Depilação Masculina a Laser" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Depila%C3%A7%C3%A3o+Masculina'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Depilação a Laser
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Depilação Masculina a Laser
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Solução prática e duradoura para contorno de barba, pescoço, tórax, costas e ombros, eliminando irritações causadas por lâminas.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Praticidade & Higiene</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Depila%C3%A7%C3%A3o%20Masculina%20a%20Laser." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Peeling de Seda -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" 
+                             alt="Peeling de Seda Facial" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Peeling+de+Seda'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Facial
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Peeling de Seda
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Procedimento nobre de hidratação e renovação celular imediata. Proporciona efeito pele de seda, toque aveludado e viço sem descamação severa.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Brilho & Maciez Imediata</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Peeling%20de%20Seda." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Estética Clínica e Cosmetologia Personalizada -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" 
+                             alt="Estética Clínica e Cosmetologia Personalizada" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Cosmetologia'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Facial Avançado
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Estética Clínica & Cosmetologia Personalizada
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Avaliação cosmetológica minuciosa para criação de rotinas e tratamentos sob medida, direcionados às necessidades específicas da sua pele.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Protocolo Exclusivo</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Cosmetologia%20Personalizada." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Limpeza de Pele -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" 
+                             alt="Limpeza de Pele Profunda" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Limpeza+de+Pele'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Facial
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Limpeza de Pele Profunda
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Extração delicada de cravos e espinhas, desobstrução dos poros, controle de oleosidade e vaporização com alta frequência antisséptica.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Poros Limpos & Renovados</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20Limpeza%20de%20Pele." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Botox -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1512290900673-03099908a89f?auto=format&fit=crop&w=600&q=80" 
+                             alt="Aplicação de Botox" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Botox'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Harmonização Facial
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Aplicação de Botox
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Suavização de linhas de expressão na testa, glabela e pés de galinha, promovendo rejuvenescimento preventivo com naturalidade.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Naturalidade & Rejuvenescimento</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Botox." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Skinbooster -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
+                             alt="Skinbooster Hidratação Profunda" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Skinbooster'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Harmonização Facial
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Skinbooster (Hidratação Profunda)
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Hidratação injetável de ácido hialurônico para nutrir a pele de dentro para fora, restaurando o turgor, a elasticidade e o brilho jovem.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Alta Densidade de Hidratação</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Skinbooster." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Design de Sobrancelhas -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" 
+                             alt="Design de Sobrancelhas Visagista" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Design+Sobrancelhas'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Sobrancelhas
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Design de Sobrancelhas Visagista
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Modelagem e desenho com técnica de visagismo facial para harmonizar o olhar, valorizando e equilibrando suas expressões naturais.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Olhar Marcante & Harmonioso</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Design%20de%20Sobrancelhas." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Clareamento Virilha e Axilas -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" 
+                             alt="Clareamento de Virilha e Axilas" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Clareamento'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Estética Corporal
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Clareamento Virilha / Axilas
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Uniformização do tom da pele com ativos clareadores seguros e dermocosméticos de ponta. Reduz manchas hipercrômicas de atrito e lâminas.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tom Uniforme</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Clareamento%20de%20Virilha/Axilas." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Microagulhamento -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" 
+                             alt="Microagulhamento e Drug Delivery" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Microagulhamento'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Estética Avançada
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Microagulhamento & Drug Delivery
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Indução percutânea de colágeno para atenuar cicatrizes de acne, poros dilatados, estrias e manchas, estimulando intensa renovação.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Estímulo de Colágeno</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Microagulhamento." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Lipo sem Cortes -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" 
+                             alt="Lipo Sem Cortes Ultracavitação" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Lipo+sem+Cortes'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Estética Corporal
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Lipo sem Cortes (Ultracavitação)
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Procedimento não invasivo para quebra da gordura localizada e modelagem das curvas corporais de forma rápida e segura.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Redução de Medidas</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Lipo%20sem%20Cortes." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Drenagem Linfática Manual -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" 
+                             alt="Drenagem Linfática Manual" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Drenagem+Linf%C3%A1tica'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Corporal
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Drenagem Linfática Manual
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Técnica suave de estímulo circulatório para eliminação de toxinas, redução do inchaço pós-operatório e combate à retenção hídrica.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Desintoxicação & Leveza</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Drenagem%20Linf%C3%A1tica." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Massagens (Relaxantes e Modeladoras) -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
+                             alt="Massagens Modeladoras e Relaxantes" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Massagens'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Corporal
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Massagens Modeladoras & Relaxantes
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Combinação de manobras para alívio do estresse diário, relaxamento muscular profundo e ativação do contorno corporal.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Bem-Estar Completo</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20Massagem." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Emagrecimento -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" 
+                             alt="Protocolos de Emagrecimento" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Emagrecimento'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Corporal & Emagrecimento
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Protocolos de Emagrecimento
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Programas integrados para perda de gordura localizada, redução de celulite e firmeza da pele com acompanhamento estético contínuo.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Saúde & Estética Corporal</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20Protocolos%20de%20Emagrecimento." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Terapia Capilar Avançada -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="capilar">
+                    <div class="relative h-48 overflow-hidden bg-brand-100">
+                        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" 
+                             alt="Terapia Capilar Avançada" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Terapia+Capilar'">
+                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Capilar
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
+                                Terapia Capilar Avançada
+                            </h3>
+                            <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                                Tratamentos focados na saúde do couro cabeludo, fortalecimento do bulbo, controle da queda e oleosidade, estimulando o crescimento saudável.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Fios Fortes & Nutridos</span>
+                            <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Terapia%20Capilar." 
+                               target="_blank" rel="noopener"
+                               class="text-sm font-bold text-stone-900 hover:text-brand-600 inline-flex items-center gap-1">
+                                Agendar <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Booking / Consultor de Atendimento via WhatsApp -->
+    <section class="py-16 bg-gradient-to-r from-brand-900 via-stoneDark to-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-10 border border-white/15 shadow-2xl">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <span class="text-gold font-semibold text-xs tracking-widest uppercase">Monte seu atendimento</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold">Qual é o seu objetivo estético hoje?</h3>
+                    <p class="text-stone-300 text-sm">
+                        Selecione as opções abaixo para gerar uma mensagem personalizada e falar diretamente com nossa recepção VIP via WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Interactive Form -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">1. Procedimento de Interesse</label>
+                        <select id="sim-procedimento" class="w-full bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
+                            <option value="Depilação Feminina a Laser">Depilação Feminina a Laser</option>
+                            <option value="Depilação Masculina a Laser">Depilação Masculina a Laser</option>
+                            <option value="Peeling de Seda">Peeling de Seda</option>
+                            <option value="Estética Clínica e Cosmetologia Personalizada">Cosmetologia Personalizada</option>
+                            <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda</option>
+                            <option value="Aplicação de Botox">Botox (Harmonização)</option>
+                            <option value="Skinbooster (Hidratação Profunda)">Skinbooster</option>
+                            <option value="Design de Sobrancelhas">Design de Sobrancelhas</option>
+                            <option value="Clareamento Virilha / Axilas">Clareamento Virilha/Axilas</option>
+                            <option value="Microagulhamento">Microagulhamento</option>
+                            <option value="Lipo sem Cortes (Ultracavitação)">Lipo sem Cortes</option>
+                            <option value="Drenagem Linfática Manual">Drenagem Linfática Manual</option>
+                            <option value="Massagens Modeladoras / Relaxantes">Massagens Corporal</option>
+                            <option value="Protocolos de Emagrecimento">Protocolos de Emagrecimento</option>
+                            <option value="Terapia Capilar Avançada">Terapia Capilar Avançada</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">2. Período Preferencial</label>
+                        <select id="sim-periodo" class="w-full bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
+                            <option value="Manhã (09:00 às 12:00)">Manhã (09h - 12h)</option>
+                            <option value="Tarde (13:00 às 17:00)">Tarde (13h - 17h)</option>
+                            <option value="Final da Tarde / Noite (17:00 às 20:00)">Final da Tarde / Noite (17h - 20h)</option>
+                            <option value="Sábado Pela Manhã">Sábado pela manhã</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">3. Agendamento Rápido</label>
+                        <button id="btn-enviar-simulacao" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Enviar Solicitação</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials / Por que escolher a Fina Pelle -->
+    <section id="diferenciais" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-600 font-bold">Excelência & Confiança</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900">
+                    Por que a Fina Pelle é referência em Palhoça?
+                </h2>
+                <p class="text-stone-600 text-base">
+                    Nosso compromisso é resgatar sua autoestima oferecendo a melhor experiência estética da região.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-3xl bg-[#fdf8f9] border border-brand-100/80 hover:border-gold/50 transition-all duration-300 space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-serif font-bold">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900">Mais de 12 Anos de História</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Uma trajetória sólida de dedicação à estética integrativa, construída com responsabilidade, inovação técnica e milhares de clientes satisfeitos.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-3xl bg-[#faf8f5] border border-brand-100/80 hover:border-gold/50 transition-all duration-300 space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-serif font-bold">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900">Atendimento 100% Personalizado</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Não acreditamos em fórmulas prontas. Cada pele e organismo requer uma anamnese detalhada para a definição do protocolo ideal.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-3xl bg-[#faf8f5] border border-brand-100/80 hover:border-gold/50 transition-all duration-300 space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-serif font-bold">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900">Preços Justos & Acessíveis</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Oferecemos tratamentos estéticos de altíssima qualidade com condições facilitadas e propostas acessíveis que cabem no seu orçamento.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 rounded-3xl bg-[#faf8f5] border border-brand-100/80 hover:border-gold/50 transition-all duration-300 space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-serif font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900">Profissionais Especializados</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Nossa equipe é constantemente treinada e habilitada para manusear as melhores tecnologias de depilação a laser e cosmetologia.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="p-8 rounded-3xl bg-[#faf8f5] border border-brand-100/80 hover:border-gold/50 transition-all duration-300 space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-serif font-bold">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900">Ambiente Acolhedor & VIP</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Espaço pensado para seu conforto, sigilo e relaxamento no coração do Centro de Palhoça, proporcionando uma experiência regeneradora.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="p-8 rounded-3xl bg-[#faf8f5] border border-brand-100/80 hover:border-gold/50 transition-all duration-300 space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-serif font-bold">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-900">Tecnologia Avançada de Laser</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Equipamentos modernos e eficientes que garantem sessões com máximo conforto, resultados rápidos e alta proteção cutânea.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Depoimentos Reais do Google -->
+    <section id="depoimentos" class="py-20 bg-brand-50/60 border-t border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="flex items-center gap-2 text-amber-500 text-sm font-bold mb-2">
+                        <div class="flex">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-stone-800">5.0 de 5 estrelas no Google</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-stone-900">
+                        O que dizem nossas clientes
+                    </h2>
+                </div>
+                <a href="https://maps.google.com/?cid=6501572090723085576" 
+                   target="_blank" rel="noopener"
+                   class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-900 bg-white px-5 py-2.5 rounded-full border border-brand-200 shadow-sm">
+                    <i class="fa-brands fa-google text-red-500"></i>
+                    <span>Ver todas as 270+ avaliações</span>
+                </a>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 italic leading-relaxed text-base">
+                            "Excelentes profissionais, ótimos serviços e com preços justo... super indico!"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-sm">
+                            M
+                        </div>
+                        <div>
+                            <p class="font-bold text-stone-900 text-sm">Cliente Verificada</p>
+                            <p class="text-xs text-stone-400">Avaliação no Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 italic leading-relaxed text-base">
+                            "Ambiente acolhedor, ótimo atendimento, equipe muito competente."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-sm">
+                            S
+                        </div>
+                        <div>
+                            <p class="font-bold text-stone-900 text-sm">Cliente Verificada</p>
+                            <p class="text-xs text-stone-400">Avaliação no Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 italic leading-relaxed text-base">
+                            "Atendimento vip, preço popular as propostas q cabem no seu orçamento."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-sm">
+                            C
+                        </div>
+                        <div>
+                            <p class="font-bold text-stone-900 text-sm">Cliente Verificada</p>
+                            <p class="text-xs text-stone-400">Avaliação no Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section / Localização e Horários -->
+    <section id="localizacao" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.2em] text-brand-600 font-bold">Venha nos visitar</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mt-2">
+                            Localização Privilegiada no Centro de Palhoça
+                        </h2>
+                        <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                            Fácil acesso, ambiente climatizado e preparado para o seu momento de bem-estar.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Endereço</h4>
+                                <p class="text-stone-600 text-sm mt-1">
+                                    R. Ten. Francisco Lehmkhul, 286 - Centro<br>
+                                    Palhoça - SC, CEP 88130-040
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Telephone & WhatsApp -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Telefone / WhatsApp</h4>
+                                <p class="text-stone-600 text-sm mt-1">
+                                    <a href="tel:+5548999462829" class="hover:text-brand-600 font-semibold">(48) 99946-2829</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Horário de Funcionamento</h4>
+                                <div class="text-stone-600 text-sm mt-1 space-y-1">
+                                    <p><span class="font-medium text-stone-800">Segunda a Sexta:</span> 09:00 às 20:00</p>
+                                    <p><span class="font-medium text-stone-800">Sábado:</span> 09:00 às 12:30</p>
+                                    <p><span class="font-medium text-stone-800">Domingo:</span> Fechado</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Direct Route Button -->
+                    <div class="pt-2">
+                        <a href="https://maps.google.com/?cid=6501572090723085576" 
+                           target="_blank" rel="noopener"
+                           class="inline-flex items-center gap-3 bg-stone-900 hover:bg-stone-800 text-white px-6 py-3.5 rounded-full font-semibold text-sm shadow-md transition">
+                            <i class="fa-solid fa-route text-gold"></i>
+                            <span>Como Chegar via Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map Preview Card -->
+                <div class="lg:col-span-7">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-brand-200 bg-white p-3">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.697669818804!2d-48.6726!3d-27.6457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952735ba14c976a1%3A0x5a3a395e2524ad0a!2sR.%20Ten.%20Francisco%20Lehmkhul%2C%20286%20-%20Centro%2C%20Palho%C3%A7a%20-%20SC%2C%2088130-040!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="420" 
+                            style="border:0; rounded-2xl: true;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-2xl w-full">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section / Perguntas Frequentes -->
+    <section id="faq" class="py-20 bg-[#fdf8f9] border-t border-brand-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-600 font-bold">Tire Suas Dúvidas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+                    Perguntas Frequentes
+                </h2>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-brand-100 overflow-hidden transition">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between font-bold text-stone-900 focus:outline-none">
+                        <span>Preciso fazer uma avaliação antes de iniciar os procedimentos?</span>
+                        <i class="fa-solid fa-plus text-brand-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-50 pt-3">
+                        Sim! Na Clínica Fina Pelle valorizamos o atendimento personalizado. Na avaliação gratuita, nossas especialistas analisam seu tipo de pele, histórico e objetivos para indicar o protocolo mais seguro e eficaz para você.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-brand-100 overflow-hidden transition">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between font-bold text-stone-900 focus:outline-none">
+                        <span>A depilação a laser é dolorida?</span>
+                        <i class="fa-solid fa-plus text-brand-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-50 pt-3">
+                        Utilizamos tecnologia de ponta com ponteira resfriada que minimiza significativamente o desconforto. A maioria das clientes relata uma sensação leve e totalmente suportável durante as sessões.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-brand-100 overflow-hidden transition">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between font-bold text-stone-900 focus:outline-none">
+                        <span>Quantas sessões de Peeling ou Clareamento são necessárias?</span>
+                        <i class="fa-solid fa-plus text-brand-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-50 pt-3">
+                        O número de sessões varia conforme a resposta individual da pele e o grau de hiperpigmentação. Já na primeira sessão de Peeling de Seda nota-se melhora viçosa, enquanto tratamentos clareadores costumam requerer um ciclo contínuo de 3 a 6 sessões.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl border border-brand-100 overflow-hidden transition">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between font-bold text-stone-900 focus:outline-none">
+                        <span>Quais são as formas de pagamento aceitas?</span>
+                        <i class="fa-solid fa-plus text-brand-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-50 pt-3">
+                        Aceitamos cartões de crédito e débito, Pix e oferecemos condições de parcelamento facilitadas para pacotes de procedimentos.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stoneDark text-stone-300 pt-16 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <img src="img/logo-fina-pelle.jpg" alt="Logo Fina Pelle" width="48" height="48" class="w-12 h-12 rounded-full bg-white object-cover">
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-white leading-none">FINA PELLE</span>
+                            <span class="block text-[10px] uppercase tracking-[0.2em] text-gold font-semibold mt-0.5">Centro de Estética</span>
+                        </div>
+                    </a>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Mais de 12 anos resgatando a autoestima e valorizando a beleza individual com atendimento VIP e alta tecnologia em Palhoça - SC.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram Fina Pelle" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-brand-600 text-white flex items-center justify-center transition">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook Fina Pelle" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-brand-600 text-white flex items-center justify-center transition">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="https://wa.me/5548999462829" target="_blank" rel="noopener" aria-label="WhatsApp Fina Pelle" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-emerald-600 text-white flex items-center justify-center transition">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-lg mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-gold transition">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-gold transition">Sobre a Clínica</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition">Procedimentos Estéticos</a></li>
+                        <li><a href="#diferenciais" class="hover:text-gold transition">Nossos Diferenciais</a></li>
+                        <li><a href="#depoimentos" class="hover:text-gold transition">Avaliações de Clientes</a></li>
+                        <li><a href="#localizacao" class="hover:text-gold transition">Localização e Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Procedimentos Populares -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-lg mb-4">Procedimentos</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#servicos" class="hover:text-gold transition">Depilação Feminina & Masculina</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition">Peeling de Seda & Limpeza de Pele</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition">Botox & Skinbooster</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition">Clareamento Axilas/Virilha</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition">Lipo sem Cortes & Drenagem</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition">Terapia Capilar & Sobrancelhas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Footer Box -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-lg mb-4">Atendimento</h4>
+                    <p class="text-xs text-stone-400 mb-2">Rua Ten. Francisco Lehmkhul, 286 - Centro, Palhoça - SC</p>
+                    <p class="text-xs text-stone-400 mb-4 font-semibold text-white">(48) 99946-2829</p>
+                    <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." 
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full shadow transition">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>Falar com Atendimento</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 text-center text-xs text-stone-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 Fina Pelle | Centro de Estética e Depilação a Laser. Todos os direitos reservados.</p>
+                <p class="text-stone-600">Palhoça - Santa Catarina</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5548999462829?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Fina%20Pelle%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
+       target="_blank" 
+       rel="noopener"
+       aria-label="Atendimento via WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group">
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-400"></span>
+        </span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Hover Tooltip -->
+        <span class="absolute right-16 bg-stone-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-md pointer-events-none">
+            Agende pelo WhatsApp
+        </span>
+    </a>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuIcon.className = 'fa-solid fa-bars text-2xl';
+                    } else {
+                        menuIcon.className = 'fa-solid fa-xmark text-2xl';
+                    }
+                });
+
+                // Close menu when clicking links
+                document.querySelectorAll('.mobile-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.className = 'fa-solid fa-bars text-2xl';
+                    });
+                });
+            }
+
+            // 2. Services Filter Tabs
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-brand-600', 'text-white');
+                        b.classList.add('bg-white', 'text-stone-700');
+                    });
+
+                    this.classList.add('active', 'bg-brand-600', 'text-white');
+                    this.classList.remove('bg-white', 'text-stone-700');
+
+                    const category = this.getAttribute('data-category');
+
+                    serviceCards.forEach(card => {
+                        const cardCat = card.getAttribute('data-category');
+                        if (category === 'todos' || cardCat === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 3. FAQ Accordion Toggle
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+
+                    // Close all other contents
+                    document.querySelectorAll('.faq-content').forEach(c => {
+                        if (c !== content) {
+                            c.classList.add('hidden');
+                        }
+                    });
+                    document.querySelectorAll('.faq-toggle i').forEach(i => {
+                        if (i !== icon) {
+                            i.className = 'fa-solid fa-plus text-brand-600 transition-transform duration-300';
+                        }
+                    });
+
+                    // Toggle current
+                    content.classList.toggle('hidden');
+                    if (content.classList.contains('hidden')) {
+                        icon.className = 'fa-solid fa-plus text-brand-600 transition-transform duration-300';
+                    } else {
+                        icon.className = 'fa-solid fa-minus text-brand-600 transition-transform duration-300';
+                    }
+                });
+            });
+
+            // 4. WhatsApp Interactive Simulator / Quick Booking Button
+            const btnSimulacao = document.getElementById('btn-enviar-simulacao');
+            if (btnSimulacao) {
+                btnSimulacao.addEventListener('click', function() {
+                    const procedimento = document.getElementById('sim-procedimento').value;
+                    const periodo = document.getElementById('sim-periodo').value;
+
+                    const texto = `Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Fina%20Pelle.%0A%0A*Procedimento:*%20${encodeURIComponent(procedimento)}%0A*Per%C3%ADodo%20de%20prefer%C3%AAncia:*%20${encodeURIComponent(periodo)}`;
+
+                    window.open(`https://wa.me/5548999462829?text=${texto}`, '_blank');
+                });
+            }
+
+            // 5. Header shadow on scroll
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
