@@ -857,10 +857,10 @@
                 </div>
 
                 <!-- Interactive Form -->
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">1. Procedimento de Interesse</label>
-                        <select id="sim-procedimento" class="w-full bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
+                        <label class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">1. Procedimento</label>
+                        <select id="sim-procedimento" class="w-full h-12 bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
                             <option value="Depilação Feminina a Laser">Depilação Feminina a Laser</option>
                             <option value="Depilação Masculina a Laser">Depilação Masculina a Laser</option>
                             <option value="Peeling de Seda">Peeling de Seda</option>
@@ -881,12 +881,12 @@
 
                     <div>
                         <label for="sim-dia" class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">2. Dia Preferencial</label>
-                        <input type="date" id="sim-dia" class="w-full bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold [color-scheme:dark]">
+                        <select id="sim-dia" class="w-full h-12 bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 text-sm focus:outline-none focus:border-gold"></select>
                     </div>
 
                     <div>
                         <label for="sim-periodo" class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">3. Horário Preferencial</label>
-                        <select id="sim-periodo" class="w-full bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
+                        <select id="sim-periodo" class="w-full h-12 bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
                             <option value="Manhã (09:00 às 12:00)">Manhã (09h - 12h)</option>
                             <option value="Tarde (13:00 às 17:00)">Tarde (13h - 17h)</option>
                             <option value="Final da Tarde / Noite (17:00 às 20:00)">Final da Tarde / Noite (17h - 20h)</option>
@@ -895,7 +895,7 @@
 
                     <div>
                         <label class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">4. Agendamento Rápido</label>
-                        <button id="btn-enviar-simulacao" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                        <button id="btn-enviar-simulacao" class="w-full h-12 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-lg"></i>
                             <span>Enviar Solicitação</span>
                         </button>
@@ -1425,30 +1425,24 @@
 
             // 4. WhatsApp Interactive Simulator / Quick Booking Button
             const btnSimulacao = document.getElementById('btn-enviar-simulacao');
-            const inputDia = document.getElementById('sim-dia');
-            if (inputDia) {
-                // Bloqueia datas passadas no calendário
+            const selectDia = document.getElementById('sim-dia');
+            if (selectDia) {
+                // Próximos 14 dias, ex.: "Sáb, 19/09"
                 const hoje = new Date();
-                hoje.setMinutes(hoje.getMinutes() - hoje.getTimezoneOffset());
-                inputDia.min = hoje.toISOString().split('T')[0];
-                inputDia.addEventListener('input', () => inputDia.classList.remove('border-red-500'));
+                for (let i = 0; i < 14; i++) {
+                    const d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + i);
+                    const diaSemana = d.toLocaleDateString('pt-BR', { weekday: 'long' });
+                    const dataCurta = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+                    const rotulo = i === 0 ? 'Hoje' : i === 1 ? 'Amanhã' : diaSemana.charAt(0).toUpperCase() + diaSemana.slice(1, 3);
+                    selectDia.add(new Option(`${rotulo}, ${dataCurta}`, `${d.toLocaleDateString('pt-BR')} (${diaSemana})`));
+                }
             }
 
             if (btnSimulacao) {
                 btnSimulacao.addEventListener('click', function() {
                     const procedimento = document.getElementById('sim-procedimento').value;
                     const periodo = document.getElementById('sim-periodo').value;
-
-                    if (!inputDia.value) {
-                        inputDia.classList.add('border-red-500');
-                        inputDia.focus();
-                        return;
-                    }
-
-                    // "2026-09-20" -> "20/09/2026 (domingo)"
-                    const [ano, mes, dia] = inputDia.value.split('-').map(Number);
-                    const diaSemana = new Date(ano, mes - 1, dia).toLocaleDateString('pt-BR', { weekday: 'long' });
-                    const diaFormatado = `${String(dia).padStart(2, '0')}/${String(mes).padStart(2, '0')}/${ano} (${diaSemana})`;
+                    const diaFormatado = selectDia.value;
 
                     const texto = `Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Fina%20Pelle.%0A%0A*Procedimento:*%20${encodeURIComponent(procedimento)}%0A*Dia%20de%20prefer%C3%AAncia:*%20${encodeURIComponent(diaFormatado)}%0A*Hor%C3%A1rio%20de%20prefer%C3%AAncia:*%20${encodeURIComponent(periodo)}`;
 
