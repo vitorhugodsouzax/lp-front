@@ -886,11 +886,7 @@
 
                     <div>
                         <label for="sim-periodo" class="block text-xs uppercase tracking-wider text-stone-300 font-semibold mb-2">3. Horário Preferencial</label>
-                        <select id="sim-periodo" class="w-full h-12 bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold">
-                            <option value="Manhã (09:00 às 12:00)">Manhã (09h - 12h)</option>
-                            <option value="Tarde (13:00 às 17:00)">Tarde (13h - 17h)</option>
-                            <option value="Final da Tarde / Noite (17:00 às 20:00)">Final da Tarde / Noite (17h - 20h)</option>
-                        </select>
+                        <select id="sim-periodo" class="w-full h-12 bg-stone-900/90 text-white border border-stone-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold"></select>
                     </div>
 
                     <div>
@@ -1426,22 +1422,60 @@
             // 4. WhatsApp Interactive Simulator / Quick Booking Button
             const btnSimulacao = document.getElementById('btn-enviar-simulacao');
             const selectDia = document.getElementById('sim-dia');
-            if (selectDia) {
-                // Próximos 14 dias, ex.: "Sáb, 19/09"
+            const selectPeriodo = document.getElementById('sim-periodo');
+
+            // Horário de funcionamento: seg-sex 09:00-20:00, sáb 09:00-12:30, dom fechado.
+            // fim = horário (em minutos) em que o período termina
+            const PERIODOS_SEMANA = [
+                { rotulo: 'Manhã (09h - 12h)', valor: 'Manhã (09:00 às 12:00)', fim: 12 * 60 },
+                { rotulo: 'Tarde (13h - 17h)', valor: 'Tarde (13:00 às 17:00)', fim: 17 * 60 },
+                { rotulo: 'Final da Tarde / Noite (17h - 20h)', valor: 'Final da Tarde / Noite (17:00 às 20:00)', fim: 20 * 60 },
+            ];
+            const PERIODOS_SABADO = [
+                { rotulo: 'Manhã (09h - 12h30)', valor: 'Manhã (09:00 às 12:30)', fim: 12 * 60 + 30 },
+            ];
+
+            // Períodos disponíveis numa data; para hoje, só os que ainda não terminaram (margem de 1h)
+            function periodosDoDia(data, ehHoje) {
+                const diaDaSemana = data.getDay();
+                if (diaDaSemana === 0) return [];
+                const periodos = diaDaSemana === 6 ? PERIODOS_SABADO : PERIODOS_SEMANA;
+                if (!ehHoje) return periodos;
+                const agora = new Date();
+                const minutosAgora = agora.getHours() * 60 + agora.getMinutes();
+                return periodos.filter(p => minutosAgora < p.fim - 60);
+            }
+
+            if (selectDia && selectPeriodo) {
+                // Próximos 14 dias com horário disponível, ex.: "Sáb, 19/09"
                 const hoje = new Date();
                 for (let i = 0; i < 14; i++) {
                     const d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + i);
+                    const periodos = periodosDoDia(d, i === 0);
+                    if (periodos.length === 0) continue;
                     const diaSemana = d.toLocaleDateString('pt-BR', { weekday: 'long' });
                     const dataCurta = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
                     const rotulo = i === 0 ? 'Hoje' : i === 1 ? 'Amanhã' : diaSemana.charAt(0).toUpperCase() + diaSemana.slice(1, 3);
-                    selectDia.add(new Option(`${rotulo}, ${dataCurta}`, `${d.toLocaleDateString('pt-BR')} (${diaSemana})`));
+                    const opcao = new Option(`${rotulo}, ${dataCurta}`, `${d.toLocaleDateString('pt-BR')} (${diaSemana})`);
+                    opcao.periodos = periodos;
+                    selectDia.add(opcao);
                 }
+
+                function atualizarPeriodos() {
+                    const periodos = selectDia.selectedOptions[0].periodos;
+                    const selecionado = selectPeriodo.value;
+                    selectPeriodo.innerHTML = '';
+                    periodos.forEach(p => selectPeriodo.add(new Option(p.rotulo, p.valor)));
+                    if (periodos.some(p => p.valor === selecionado)) selectPeriodo.value = selecionado;
+                }
+                selectDia.addEventListener('change', atualizarPeriodos);
+                atualizarPeriodos();
             }
 
             if (btnSimulacao) {
                 btnSimulacao.addEventListener('click', function() {
                     const procedimento = document.getElementById('sim-procedimento').value;
-                    const periodo = document.getElementById('sim-periodo').value;
+                    const periodo = selectPeriodo.value;
                     const diaFormatado = selectDia.value;
 
                     const texto = `Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Fina%20Pelle.%0A%0A*Procedimento:*%20${encodeURIComponent(procedimento)}%0A*Dia%20de%20prefer%C3%AAncia:*%20${encodeURIComponent(diaFormatado)}%0A*Hor%C3%A1rio%20de%20prefer%C3%AAncia:*%20${encodeURIComponent(periodo)}`;
