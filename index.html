@@ -16,6 +16,8 @@
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Phosphor Icons (traço fino, usados nos cards de procedimentos) -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
 
     <!-- Tailwind Custom Configuration -->
     <script>
@@ -75,6 +77,90 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(228, 164, 177, 0.35);
         }
+
+        /* Cards de procedimentos: estilo editorial claro, ícone de traço fino */
+        .service-card {
+            position: relative;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, transparent, #c5a059, transparent);
+            transition: width 0.6s ease;
+        }
+        .service-card:hover::before {
+            width: 80%;
+        }
+        .service-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 28px 28px 0;
+        }
+        .service-icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 9999px;
+            background: linear-gradient(145deg, #fdf6f7, #f8e6e9);
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            color: #8a2e44;
+            font-size: 1.9rem;
+            transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 9999px;
+            border: 1px solid rgba(197, 160, 89, 0.18);
+            transition: inset 0.5s ease, border-color 0.5s ease;
+        }
+        .service-card:hover .service-icon {
+            background: #481622;
+            color: #e8cf9c;
+            border-color: #481622;
+        }
+        .service-card:hover .service-icon::after {
+            inset: -9px;
+            border-color: rgba(197, 160, 89, 0.5);
+        }
+        .service-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 3rem;
+            line-height: 0.8;
+            color: #f1ccd3;
+            transition: color 0.5s ease;
+        }
+        .service-card:hover .service-num {
+            color: #c5a059;
+        }
+        .service-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #9d7c3b;
+        }
+        .service-eyebrow::before {
+            content: '';
+            width: 22px;
+            height: 1px;
+            background: #c5a059;
+        }
     </style>
 </head>
 <body class="antialiased text-stone-800 bg-[#fdf8f9]">
@@ -84,7 +170,6 @@
         <span class="inline-flex items-center gap-2">
             <i class="fa-solid fa-star text-gold text-xs"></i>
             <strong>Clínica Nota 5.0 no Google</strong> com mais de 270 avaliações de clientes satisfeitos!
-            <a href="#contato" class="underline hover:text-white ml-1 transition">Agende sua avaliação</a>
         </span>
     </div>
 
@@ -376,17 +461,13 @@
                 
                 <!-- 1. Depilação Feminina -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="laser">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
-                             alt="Depilação Feminina a Laser" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Depila%C3%A7%C3%A3o+Feminina'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Depilação a Laser
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-gender-female" aria-hidden="true"></i></span>
+                        <span class="service-num">01</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Depilação a Laser</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Depilação Feminina a Laser
                             </h3>
@@ -407,17 +488,13 @@
 
                 <!-- 2. Depilação Masculina -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="laser">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80" 
-                             alt="Depilação Masculina a Laser" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Depila%C3%A7%C3%A3o+Masculina'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Depilação a Laser
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-gender-male" aria-hidden="true"></i></span>
+                        <span class="service-num">02</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Depilação a Laser</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Depilação Masculina a Laser
                             </h3>
@@ -438,17 +515,13 @@
 
                 <!-- 3. Peeling de Seda -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" 
-                             alt="Peeling de Seda Facial" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Peeling+de+Seda'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Facial
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-feather" aria-hidden="true"></i></span>
+                        <span class="service-num">03</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Facial</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Peeling de Seda
                             </h3>
@@ -469,17 +542,13 @@
 
                 <!-- 4. Estética Clínica e Cosmetologia Personalizada -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" 
-                             alt="Estética Clínica e Cosmetologia Personalizada" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Cosmetologia'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Facial Avançado
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-flask" aria-hidden="true"></i></span>
+                        <span class="service-num">04</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Facial Avançado</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Estética Clínica & Cosmetologia Personalizada
                             </h3>
@@ -500,17 +569,13 @@
 
                 <!-- 5. Limpeza de Pele -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" 
-                             alt="Limpeza de Pele Profunda" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Limpeza+de+Pele'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Facial
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-drop" aria-hidden="true"></i></span>
+                        <span class="service-num">05</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Facial</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Limpeza de Pele Profunda
                             </h3>
@@ -531,17 +596,13 @@
 
                 <!-- 6. Botox -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1512290900673-03099908a89f?auto=format&fit=crop&w=600&q=80" 
-                             alt="Aplicação de Botox" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Botox'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Harmonização Facial
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-syringe" aria-hidden="true"></i></span>
+                        <span class="service-num">06</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Harmonização Facial</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Aplicação de Botox
                             </h3>
@@ -562,17 +623,13 @@
 
                 <!-- 7. Skinbooster -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
-                             alt="Skinbooster Hidratação Profunda" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Skinbooster'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Harmonização Facial
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-diamond" aria-hidden="true"></i></span>
+                        <span class="service-num">07</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Harmonização Facial</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Skinbooster (Hidratação Profunda)
                             </h3>
@@ -593,17 +650,13 @@
 
                 <!-- 8. Design de Sobrancelhas -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" 
-                             alt="Design de Sobrancelhas Visagista" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Design+Sobrancelhas'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Sobrancelhas
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-eye" aria-hidden="true"></i></span>
+                        <span class="service-num">08</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Sobrancelhas</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Design de Sobrancelhas Visagista
                             </h3>
@@ -624,17 +677,13 @@
 
                 <!-- 9. Clareamento Virilha e Axilas -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" 
-                             alt="Clareamento de Virilha e Axilas" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Clareamento'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Estética Corporal
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-sun" aria-hidden="true"></i></span>
+                        <span class="service-num">09</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Estética Corporal</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Clareamento Virilha / Axilas
                             </h3>
@@ -655,17 +704,13 @@
 
                 <!-- 10. Microagulhamento -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="facial">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" 
-                             alt="Microagulhamento e Drug Delivery" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Microagulhamento'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Estética Avançada
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-pen-nib" aria-hidden="true"></i></span>
+                        <span class="service-num">10</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Estética Avançada</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Microagulhamento & Drug Delivery
                             </h3>
@@ -686,17 +731,13 @@
 
                 <!-- 11. Lipo sem Cortes -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" 
-                             alt="Lipo Sem Cortes Ultracavitação" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Lipo+sem+Cortes'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Estética Corporal
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-waveform" aria-hidden="true"></i></span>
+                        <span class="service-num">11</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Estética Corporal</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Lipo sem Cortes (Ultracavitação)
                             </h3>
@@ -717,17 +758,13 @@
 
                 <!-- 12. Drenagem Linfática Manual -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" 
-                             alt="Drenagem Linfática Manual" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Drenagem+Linf%C3%A1tica'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Corporal
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-waves" aria-hidden="true"></i></span>
+                        <span class="service-num">12</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Corporal</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Drenagem Linfática Manual
                             </h3>
@@ -748,17 +785,13 @@
 
                 <!-- 13. Massagens (Relaxantes e Modeladoras) -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
-                             alt="Massagens Modeladoras e Relaxantes" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Massagens'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Corporal
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-flower-lotus" aria-hidden="true"></i></span>
+                        <span class="service-num">13</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Corporal</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Massagens Modeladoras & Relaxantes
                             </h3>
@@ -779,17 +812,13 @@
 
                 <!-- 14. Emagrecimento -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="corporal">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" 
-                             alt="Protocolos de Emagrecimento" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Emagrecimento'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Corporal & Emagrecimento
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-scales" aria-hidden="true"></i></span>
+                        <span class="service-num">14</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Corporal & Emagrecimento</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Protocolos de Emagrecimento
                             </h3>
@@ -810,17 +839,13 @@
 
                 <!-- 15. Terapia Capilar Avançada -->
                 <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-brand-100 transition-all duration-300 flex flex-col" data-category="capilar">
-                    <div class="relative h-48 overflow-hidden bg-brand-100">
-                        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" 
-                             alt="Terapia Capilar Avançada" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/600x400/e5d3cd/52342d?text=Terapia+Capilar'">
-                        <span class="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-md text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Capilar
-                        </span>
+                    <div class="service-head">
+                        <span class="service-icon"><i class="ph-light ph-plant" aria-hidden="true"></i></span>
+                        <span class="service-num">15</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div class="px-7 pb-7 pt-5 flex-1 flex flex-col justify-between">
                         <div>
+                            <span class="service-eyebrow">Capilar</span>
                             <h3 class="font-serif text-2xl font-bold text-stone-900 group-hover:text-brand-600 transition-colors">
                                 Terapia Capilar Avançada
                             </h3>
